@@ -1,40 +1,35 @@
-#include <stdio.h>
-#include "main.h"
+#include "mainfunction.h"
 
 int main(void) {
 
-	int temp,mode,back = 0;
+	while (1) {
 
-	do {
-		void startMenu();
-		scanf("%d", &temp);
+		int menucode = drawMenu();
 
-		if (temp == 1) {
-			void selectMode();
-			scanf("%d", &mode);
-			temp = 3;
+		if (menucode == 0) {
+			
+			int modeNum = selectMode();
+
+			if (modeNum == 0) {
+				/*하드모드 실행*/
+				printf("하드모드");
+			}
+			else if (modeNum == 1) {
+				/*이지모드 실행*/
+				printf("이지모드");
+			}
+			else if (modeNum == 2) {
+				/*뒤로*/
+				printf("뒤로");
+			}
 		}
-		else  if(temp == 2) {
-			/*게임 설명*/
-			printf("돌아가기 (1)\n");
-			scanf("%d" , back);
-			}
-	} while (temp != 3);
-
-
-
-
-
-	if (mode == 1) {
-		/*이지모드로 게임 연결*/
-		printf("a");
+		else if (menucode == 1) {
+			drawInfo();
+		}
+		else if (menucode == 2) {
+			return 0;
+			system("cls");
+		}
 	}
-	else if(mode == 2) {
-		/*하드모드로 게임 연결*/
-		printf("b");
-	}
-	else if (mode == 3) {
-		/*초반 메뉴 선택부분*/
-		printf("c");
-			}
+	return 0;
 }
