@@ -1,6 +1,8 @@
 ﻿#include <stdio.h>
+#include <stdlib.h>
 #include <windows.h>
-#include<conio.h>
+#include <conio.h>
+#include <time.h>
 #pragma once
 
 
@@ -80,4 +82,10 @@ int drawMenu()//메뉴 그리기
             return y - 16;// 0, 1, 2 반환
         }
     }
+}
+int chooseNum(int n1, int n2) {
+    return (int) (rand() % (n2 -n1 + 1)) + n1;
+}
+int chooseNumArray(int n1, int n2) {
+    return (int)(rand() % (n2 - n1 + 1)) + n1;
 }
