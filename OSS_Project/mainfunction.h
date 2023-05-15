@@ -29,28 +29,26 @@ int keyControl()//키보드 이벤트 처리
 }
 int drawMenu()//메뉴 그리기
 {
-    int x = 40, y = 14;
-
-    printf("=============================================================================================\n");
-    printf("=============================================================================================\n");
-    printf("$$oOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUo$$\n");
-    printf("|WWWW|  []      []     []     [][]    [] [][][][][] []      []     []     [][]    []  |WWWW|\n");
-    printf(" |WW|   []      [] [][]  [][] [][][]  [] []      [] []      [] [][]  [][] [][][]  []   |WW| \n");
-    printf(" |WW|   [][][][][] []      [] []  []  [] []         [][]  [][] []      [] []  []  []   |WW| \n");
-    printf(" |WW|   [][][][][] [][][][][] []  []  [] []  [][][] [][][][][] [][][][][] []  []  []   |WW| \n");
-    printf(" |WW|   []      [] []      [] []    [][] []      [] []  []  [] []      [] []    [][]   |WW| \n");
-    printf("|WWWW|  []      [] []      [] []      [] [][][][][] []  []  [] []      [] []      []  |WWWW|\n");
-    printf("$$oOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUo$$\n");
-    printf("=============================================================================================\n");
-    printf("                         ***WITH WORDS OF COMPUTER ENGINEERING***                            \n");
-    printf("=============================================================================================\n");
-    printf("                                   >>CH00$3 TH3 M3NU<<                                     \n");
+    int x = 52, y = 16;
+    printf("\n\n\n\n");
+    printf("========================================================================================================================\n");
+    printf("========================================================================================================================\n");
+    printf("$$oOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUooOoUoOoUoOoUoOoUoOoUoOoUoOo$$\n");
+    printf("|WWWW|               []      []     []     [][]    [] [][][][][] []      []     []     [][]    []                 |WWWW|\n");
+    printf(" |WW|                []      [] [][]  [][] [][][]  [] []      [] []      [] [][]  [][] [][][]  []                  |WW| \n");
+    printf(" |WW|                [][][][][] []      [] []  []  [] []         [][]  [][] []      [] []  []  []                  |WW| \n");
+    printf(" |WW|                [][][][][] [][][][][] []  []  [] []  [][][] [][][][][] [][][][][] []  []  []                  |WW| \n");
+    printf(" |WW|                []      [] []      [] []    [][] []      [] []  []  [] []      [] []    [][]                  |WW| \n");
+    printf("|WWWW|               []      [] []      [] []      [] [][][][][] []  []  [] []      [] []      []                 |WWWW|\n");
+    printf("$$oOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoUoOoU$$\n");
+    printf("========================================================================================================================\n");
+    printf("                                                 >>CH00$3 TH3 M3NU<<                                                    \n");
     gotoxy(x - 2, y);//x-2인 이유: 커서
-    printf("> EASY MODE                                   \n");
+    printf("> EASY MODE\n");
     gotoxy(x, y + 1);
-    printf("HARD MODE                                   \n");
+    printf("HARD MODE\n");
     gotoxy(x, y + 2);
-    printf("QUIT                                   \n");
+    printf("QUIT\n");
 
     //커서 이동 처리
     while (1)
@@ -59,7 +57,7 @@ int drawMenu()//메뉴 그리기
         switch (n)
         {
         case UP:
-            if (y > 13)//y: 12~15
+            if (y > 16)//y: 12~15
             {
                 gotoxy(x - 2, y);
                 printf(" ");
@@ -69,7 +67,7 @@ int drawMenu()//메뉴 그리기
             break;
 
         case DOWN:
-            if (y < 16)//y: 12~15
+            if (y < 18)//y: 12~15
             {
                 gotoxy(x - 2, y);
                 printf(" ");
@@ -79,8 +77,7 @@ int drawMenu()//메뉴 그리기
             break;
 
         case SUBMIT:
-            return y - 14;// 0, 1, 2 반환
+            return y - 16;// 0, 1, 2 반환
         }
     }
 }
-// 메뉴선택 구현 부분
