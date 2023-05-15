@@ -4,7 +4,7 @@
 int main(void) {
 	char* easyModeWord[10] = { "cookie","turtle","belief","wear","beard","oceon","danger","hollow","feather","pilot"};
 	char* hardModeWord[10] = { "telephone","chopstick","dictionary","situtaion","population","comparison","competition","experience","revolution","omnipotent" };
-	
+	printf("aaa");
 	/*
 	srand(GetTickCount());
 	int lifeNum1 = chooseNum(2,4);
