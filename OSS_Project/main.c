@@ -4,32 +4,28 @@
 int main(void) {
 	char* easyModeWord[10] = { "cookie","turtle","belief","wear","beard","oceon","danger","hollow","feather","pilot"};
 	char* hardModeWord[10] = { "telephone","chopstick","dictionary","situtaion","population","comparison","competition","experience","revolution","omnipotent" };
-	
-	/*
-	srand(GetTickCount());
-	int lifeNum1 = chooseNum(2,4);
-	int lifeNum2 = chooseNum(2,4);
-	printf("ÃÑ ¸ñ¼û  : %d" , lifeNum1 + lifeNum2);
-	*/
-	//·£´ıÇÏ°Ô ¼ıÀÚ 2°³
-	
+
 	/*
 	srand(GetTickCount());
 	int arrayNum = chooseNumArray(0, 9);
 	printf(easyModeWord[arrayNum]);
 	*/
-	// ´Ü¾î »Ì´Â ³­¼ö 1°³
+	// ë‹¨ì–´ ë½‘ëŠ” ë‚œìˆ˜ 1ê°œ
 
 	while (1) {
 		int menucode = drawMenu();
+		system("cls");
 
 		if (menucode == 0) {
-			/*ÇÏµå¸ğµå ½ÇÇà*/
-			printf("ÇÏµå¸ğµå");
+			/*ì´ì§€ëª¨ë“œ ì‹¤í–‰*/
+			printf("<<Easy Mode>>\n");
+			drawDice();
+			break;
 		}
 		else if (menucode == 1) {
-			/*ÀÌÁö¸ğµå ½ÇÇà*/
-			printf("ÀÌÁö¸ğµå");
+			/*í•˜ë“œëª¨ë“œ ì‹¤í–‰*/
+			printf("<<Hard Mode>>");
+			break;
 		}
 		else if (menucode == 2) {
 			return 0;
