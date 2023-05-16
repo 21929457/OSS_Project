@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
 #include <conio.h>
@@ -88,4 +88,87 @@ int chooseNum(int n1, int n2) {
 }
 int chooseNumArray(int n1, int n2) {
     return (int)(rand() % (n2 - n1 + 1)) + n1;
+}
+void slowPrint(unsigned long speed, const char* s) {
+    /*타이핑 효과를 주기 위한 함수
+    slowPrint(속도, 출력할 문자열);*/
+    int i = 0;
+    while (s[i] != 0) {
+        printf("%c", s[i++]);
+        fflush(stdout);
+        Sleep(speed);
+    }
+}
+void drawDice() {
+    srand(GetTickCount());
+    int lifeNum1 = chooseNum(2, 4);
+    int lifeNum2 = chooseNum(2, 4);
+    slowPrint(35, "('O w O') / 안녕하세요!행맨게임에 오신 걸 환영해요!!\n");
+    slowPrint(35, "            게임을 위한 주사위를 주워왔어요.\n" );
+    slowPrint(35, "            2~4 외의 숫자는 지워져있네요!? \n");
+    slowPrint(35, "            어쩔 수 없죠. 주사위를 굴릴게요 !! \n\n");
+    printf("            당신에게 주어진 기회는 % d 번!! \n", lifeNum1 + lifeNum2);
+
+    switch (lifeNum1)
+    {
+    case 2:
+        printf(" -------\n");
+        printf("| o     |\n");
+        printf("|       |\n");
+        printf("|     o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+    case 3:
+        printf(" -------\n");
+        printf("| o     |\n");
+        printf("|   o   |\n");
+        printf("|     o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+
+    case 4:
+        printf(" -------\n");
+        printf("| o   o |\n");
+        printf("|       |\n");
+        printf("| o   o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+    default:
+        printf("error!!");
+        break;
+    }
+    switch (lifeNum2)
+    {
+    case 2:
+        printf(" -------\n");
+        printf("| o     |\n");
+        printf("|       |\n");
+        printf("|     o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+    case 3:
+        printf(" -------\n");
+        printf("| o     |\n");
+        printf("|   o   |\n");
+        printf("|     o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+
+    case 4:
+        printf(" -------\n");
+        printf("| o   o |\n");
+        printf("|       |\n");
+        printf("| o   o |\n");
+        printf(" -------\n");
+        printf(" \n");
+        break;
+    default:
+        printf("error!!");
+        break;
+    }
 }
