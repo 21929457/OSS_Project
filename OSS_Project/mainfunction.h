@@ -3,6 +3,8 @@
 #include <windows.h>
 #include <conio.h>
 #include <time.h>
+#include <string.h>
+
 #pragma once
 
 
@@ -99,15 +101,18 @@ void slowPrint(unsigned long speed, const char* s) {
         Sleep(speed);
     }
 }
-void drawDice() {
+int drawDice() {
+
     srand(GetTickCount());
     int lifeNum1 = chooseNum(2, 4);
     int lifeNum2 = chooseNum(2, 4);
+
+    int result = lifeNum1 + lifeNum2;
     slowPrint(35, "('O w O') / 안녕하세요!행맨게임에 오신 걸 환영해요!!\n");
     slowPrint(35, "            게임을 위한 주사위를 주워왔어요.\n" );
     slowPrint(35, "            2~4 외의 숫자는 지워져있네요!? \n");
     slowPrint(35, "            어쩔 수 없죠. 주사위를 굴릴게요 !! \n\n");
-    printf("            당신에게 주어진 기회는 % d 번!! \n", lifeNum1 + lifeNum2);
+    printf("            당신에게 주어진 기회는 %d 번!! \n", result);
 
     switch (lifeNum1)
     {
@@ -171,4 +176,16 @@ void drawDice() {
         printf("error!!");
         break;
     }
+    gotoxy(50,25);
+    slowPrint(35, "Press any key!!!\n");
+    return result;
+}
+char* Init(char currentstat[], int len) { //정답 입력 상태를 초기화 시키는 함수
+    for (int i = 0; i < len; i++) {
+        currentstat[i] = '_';
+    }
+    for (int i = len; i <= 20; i++) {
+        currentstat[i] = ' ';
+    }
+    return currentstat;
 }
