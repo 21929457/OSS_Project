@@ -14,7 +14,14 @@
 #define RIGHT 3
 #define SUBMIT 4
 
-
+void hideCursor() {
+    //커서 숨기는 함수
+    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO ConsoleCursor;
+    ConsoleCursor.bVisible = 0;
+    ConsoleCursor.dwSize = 1;
+    SetConsoleCursorInfo(consoleHandle, &ConsoleCursor);
+}
 void gotoxy(int x, int y) {
     HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD pos;
@@ -108,10 +115,10 @@ int drawDice() {
     int lifeNum2 = chooseNum(2, 4);
 
     int result = lifeNum1 + lifeNum2;
-    slowPrint(35, "('O w O') / 안녕하세요!행맨게임에 오신 걸 환영해요!!\n");
-    slowPrint(35, "            게임을 위한 주사위를 주워왔어요.\n" );
-    slowPrint(35, "            2~4 외의 숫자는 지워져있네요!? \n");
-    slowPrint(35, "            어쩔 수 없죠. 주사위를 굴릴게요 !! \n\n");
+    slowPrint(1, "('O w O') / 안녕하세요!행맨게임에 오신 걸 환영해요!!\n");
+    slowPrint(1, "            게임을 위한 주사위를 주워왔어요.\n" );
+    slowPrint(1, "            2~4 외의 숫자는 지워져있네요!? \n");
+    slowPrint(1, "            어쩔 수 없죠. 주사위를 굴릴게요 !! \n\n");
     printf("            당신에게 주어진 기회는 %d 번!! \n", result);
 
     switch (lifeNum1)
@@ -180,12 +187,20 @@ int drawDice() {
     slowPrint(35, "Press any key!!!\n");
     return result;
 }
-char* Init(char currentstat[], int len) { //정답 입력 상태를 초기화 시키는 함수
+void Init(char currentstat[], int len) { //정답 입력 상태를 초기화 시키는 함수
     for (int i = 0; i < len; i++) {
         currentstat[i] = '_';
     }
     for (int i = len; i <= 20; i++) {
         currentstat[i] = ' ';
     }
-    return currentstat;
+}
+int SearchAndPrint(char currentstat[], char answer[], char alph) { //사용자가 입력한 문자가 정답에 있는지 검사하고 결과를 출력하는 함수 (존재하면 0, 존재하지 않으면 -1반환)
+    int flag = -1;
+    for (int i = 0; i < strlen(answer); i++)
+        if (answer[i] == alph) {
+            currentstat[i] = alph;
+            flag = 0; //존재
+        }
+    return flag;
 }
