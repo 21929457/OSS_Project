@@ -6,7 +6,7 @@ int main(void) {
 	hideCursor();
 
 	char easyModeWord[10][7] = { "cookie","turtle","belief","wear","beard","oceon","danger","hollow","feather","pilot" };
-	char easyModeMeaning[10][12] = { "쿠키","거북","신념,확신","입다","(턱)수염","대양","위험","구멍,속이 빈","깃털","조종사"};
+	char easyModeMeaning[10][12] = { "쿠키","거북이","신념,확신","입다","(턱)수염","대양","위험","구멍,속이 빈","깃털","조종사"};
 	char hardModeWord[10][11] = { "telephone","chopstick","dictionary","situtaion","population","comparison","competition","experience","revolution","omnipotent" };
 	char hardModeMeaning[10][9] = {"전화","젓가락","사전","상황,사태","인구","비교","경쟁","경험","혁명","전능한"};
 	
@@ -31,31 +31,239 @@ int main(void) {
 		printf("게임 시작!\n");
 
 		Init(currentstat, word_size);
-		printf("남은 목숨 : %d\n", life);
 		printf("%s\n", currentstat);
+		printf("남은 목숨 : %d\n", life);
+		printf("+ㅡㅡ+\n");
+		printf("｜  ｜\n");
+		printf("｜ \n");
+		printf("｜       \n");
+		printf("｜       \n");
+		printf("｜      \n");
+		printf("｜      \n");
+		printf("｜￣￣￣￣￣｜+\n");
+		printf("================\n");
 
 		while (1) {
 			printf("\n소문자 알파벳 하나를 입력하세요 :"); 
 			scanf("%c", &alpabet);
 			scanf("%c", &chr);
-
+		
 			int flag = SearchAndPrint(currentstat, easyModeWord[word_Number], alpabet);
 
 			if (flag == 0) {
 				printf(" %c 가 단어에 있어요!\n", alpabet);
 				printf("%s\n", currentstat);
 				printf("남은 목숨 : %d\n", life);
+				switch (life) {
+				case 8:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ \n");
+					printf("｜       \n");
+					printf("｜       \n");
+					printf("｜      \n");
+					printf("｜      \n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 7:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (   )\n");
+					printf("｜       \n");
+					printf("｜       \n");
+					printf("｜      \n");
+					printf("｜      \n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 6:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /  ＼\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 5:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /  ＼\n");
+					printf("｜ 0   0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 4:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0   0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 3 :
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 2:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜  /＼\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 1:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜  /＼\n");
+					printf("｜￣   ￣\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				}
 			}
 			else if (flag == -1) {
 				printf(" %c는 단어에 없어요..\n", alpabet);
 				printf("%s\n", currentstat);
 				life -= 1;
 				printf("남은 목숨 : %d\n", life);
+				switch (life) {
+				case 8:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ \n");
+					printf("｜       \n");
+					printf("｜       \n");
+					printf("｜      \n");
+					printf("｜      \n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 7:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (   )\n");
+					printf("｜       \n");
+					printf("｜       \n");
+					printf("｜      \n");
+					printf("｜      \n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 6:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /  ＼\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 5:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /  ＼\n");
+					printf("｜ 0   0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 4:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0   0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 3:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 2:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜  /＼\n");
+					printf("｜\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				case 1:
+					printf("+ㅡㅡ+\n");
+					printf("｜  ｜\n");
+					printf("｜ (  )\n");
+					printf("｜ /｜＼\n");
+					printf("｜ 0｜ 0\n");
+					printf("｜  /＼\n");
+					printf("｜￣   ￣\n");
+					printf("｜￣￣￣￣￣｜+\n");
+					printf("================\n");
+					break;
+				}
 			}
+
 			int same_check = strcmp(easyModeWord[word_Number], currentstat);
 			
 			if (life == 0) {
 				system("cls");
+				gotoxy(50, 4);
+				printf("+ㅡㅡ+\n");
+				gotoxy(50, 5);
+				printf("｜  ｜\n");
+				gotoxy(50, 6);
+				printf("｜ (x_x)\n");
+				gotoxy(50, 7);
+				printf("｜ /｜＼\n");
+				gotoxy(50, 8);
+				printf("｜ 0｜ 0\n");
+				gotoxy(50, 9);
+				printf("｜  /＼\n");
+				gotoxy(50, 10);
+				printf("｜￣   ￣\n");
+				gotoxy(50, 11);
+				printf("｜￣￣￣￣￣｜+\n");
+				gotoxy(50, 12);
+				printf("================\n");
 				gotoxy(50, 13);
 				slowPrint(1, "게임오버");
 				return 0;

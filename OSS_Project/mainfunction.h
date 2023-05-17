@@ -185,7 +185,7 @@ int drawDice() {
     }
     gotoxy(50,25);
     slowPrint(35, "Press any key!!!\n");
-    return result;
+    return 8;
 }
 void Init(char currentstat[], int len) { //정답 입력 상태를 초기화 시키는 함수
     for (int i = 0; i < len; i++) {
